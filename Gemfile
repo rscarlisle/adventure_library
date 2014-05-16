@@ -32,10 +32,25 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+gem 'rails_12factor', group: [:production]
+
+gem 'ransack'
+
+gem 'kaminari'
+#gem 'bootstrap-kaminari-views'
+
+gem 'simple_form', '~> 3.1.0.rc1'
+
 group :test, :development do
+  gem 'quiet_assets'
+  gem 'better_errors'
+  gem 'binding_of_caller'
+  gem 'meta_request'
+  gem 'awesome_print'
   gem 'rspec-rails'
   gem 'pry'
   gem 'pry-byebug'
+  gem 'pry-rails'
   gem 'dotenv-rails'
 end
 
@@ -46,6 +61,10 @@ end
 gem 'unicorn'
 
 gem 'sidekiq'
+
+gem 'foreman'
+
+gem 'typhoeus'
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
