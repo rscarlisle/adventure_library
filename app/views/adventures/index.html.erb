@@ -1,0 +1,23 @@
+<h1> Welcome to Randy's Adventure Library! </h1>
+<%= link_to "New Adventure Story", new_adventure_path, :class => "btn btn-success" %>
+<h4> Adventures Created Locally: </h4>
+<% @local_adventures.each do |local| %>
+	<li><%= link_to local.title, adventure_path(local.id) %></li>
+		<%= link_to "Edit", edit_adventure_path(local), :class => "btn btn-info btn-sm" %>
+    	<%= link_to "Delete", adventure_path(local.id), :method => :delete, data: { :confirm => 'Are you sure?'}, :class => 'btn btn-danger btn-sm' %></b></li>
+
+<% end %>
+
+<h4> Adventures from other servers: </h4>
+
+<% @adventures.each do |adventure| %>
+	<li><%= link_to adventure.title, adventure_path(adventure.id) %></li>
+<% end %>
+
+<h4> Adventures with no start page: </h4>
+<% @adventures.each do |adventure| %>
+	<li><%= link_to adventure.title, adventure_path(adventure.id) %></li>
+<% end %>
+
+<h4> Add your library for scraping: </h4>
+<input id="adventure_url" type="text" value="example.com" />
